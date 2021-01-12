@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         New Userscript123
 // @namespace    https://top.gg/*
-// @version      0.1
+// @version      0.2
 // @description  Tools for Top.gg
 // @author       Enes Genç
 // @match        https://top.gg/*
@@ -14,8 +14,6 @@
     'use strict';
 
     // Your code here...
-
-
     GM_config.init(
         {
             "id": "config",
@@ -28,15 +26,18 @@
             }
         }
     );
-
-    let button = document.createElement("li");
+    let buttonli = document.createElement("li");
+    let button = document.createElement("a");
+    buttonli.appendChild(button);
     button.innerHTML = "Top.gg Tools";
     function openMenu (zEvent) {
         GM_config.open();
     }
 
-    document.querySelector(".menu").firstChild.appendChild(button);
+    document.getElementsByClassName("menu container")[0].getElementsByTagName("ul")[0].appendChild(buttonli);
 
-    button.addEventListener("click", openMenu, false)
+    button.addEventListener("click", openMenu, false);
+
+
 
 })();

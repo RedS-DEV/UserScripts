@@ -29,12 +29,15 @@
         }
     );
 
+    GM_config.open();
+
+    /*
     let button = document.createElement("li");
     button.innerHTML = "Top.gg Tools";
     button.onclick = () => {
         GM_config.open();
     };
     document.querySelector("menu").appendChild(button);
-
+    */
 
 })();

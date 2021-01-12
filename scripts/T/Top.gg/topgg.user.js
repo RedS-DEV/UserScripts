@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         New Userscript123
-// @namespace    https://top.gg/*
-// @version      0.4
+// @name         Top.gg Tools
+// @namespace    tr.gen.enesgenc.topggtools
+// @version      0.5
 // @description  Tools for Top.gg
 // @author       Enes Genç
 // @match        https://top.gg/*
@@ -111,7 +111,7 @@
             $("head").append(`<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.min.css" integrity="sha512-nIm/JGUwrzblLex/meoxJSPdAKQOe2bLhnrZ81g5Jbh519z8GFJIWu87WAhBH+RAyGbM4+U3S2h+kL5JoV6/wA==" crossorigin="anonymous" />`);
             $("head").append(`<link rel="stylesheet" href="https://raw.githubusercontent.com/RedS-DEV/UserScripts/main/scripts/T/Top.gg/stylesheet.css"/>`)
 
-            stats.innerHTML = "Statistics";
+            stats.innerHTML = "Statistics (Powered by DBLStatistics)";
             stats.className = "popup-link";
             stats.onclick = () => {
                 $.magnificPopup.open({

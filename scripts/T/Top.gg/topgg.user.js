@@ -16,7 +16,7 @@
     // Your code here...
 
 
-    GM_Config.init(
+    GM_config.init(
         {
             "id": "config",
             "fields": {
@@ -32,7 +32,7 @@
     let button = document.createElement("li");
     button.innerHTML = "Top.gg Tools";
     button.onclick = () => {
-        GM_Config.open();
+        GM_config.open();
     };
     document.querySelector("menu").appendChild(button);
 

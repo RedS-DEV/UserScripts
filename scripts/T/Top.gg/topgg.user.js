@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         New Userscript123
 // @namespace    https://top.gg/*
-// @version      0.3
+// @version      0.4
 // @description  Tools for Top.gg
 // @author       Enes Genç
 // @match        https://top.gg/*
@@ -9,7 +9,7 @@
 // @downloadURL  https://github.com/RedS-DEV/UserScripts/raw/main/scripts/T/Top.gg/topgg.user.js
 // @require      https://openuserjs.org/src/libs/sizzle/GM_config.js
 // @require      https://code.jquery.com/jquery-3.5.1.min.js
-// @require      https://raw.githubusercontent.com/RedS-DEV/UserScripts/main/lib/colorbox.js
+// @require      https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js
 // @grant        GM_getValue
 // @grant        GM_setValue
 // ==/UserScript==
@@ -106,16 +106,23 @@
         if(page.startsWith("/bot/") && GM_config.get("dblStats")) {
             let desc = $(".entity-content__description");
             let div = document.createElement("div");
-            let moUpv = document.createElement("a");
-            let toUpv = document.createElement("a");
-            let srvrs = document.createElement("a");
-            let shard = document.createElement("a");
+            let stats = document.createElement("a");
 
-            moUpv.innerHTML = "Monthly Upvotes";
-            moUpv.className = "moUpv";
-            $(".moUpv").colorbox({href: `https://dblstatistics.com${page} .monthlyvotes`});
-            div.appendChild(moUpv);
+            $("head").append(`<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.min.css" integrity="sha512-nIm/JGUwrzblLex/meoxJSPdAKQOe2bLhnrZ81g5Jbh519z8GFJIWu87WAhBH+RAyGbM4+U3S2h+kL5JoV6/wA==" crossorigin="anonymous" />`);
+            $("head").append(`<link rel="stylesheet" href="https://raw.githubusercontent.com/RedS-DEV/UserScripts/main/scripts/T/Top.gg/stylesheet.css"/>`)
 
+            stats.innerHTML = "Statistics";
+            stats.className = "popup-link";
+            stats.onclick = () => {
+                $.magnificPopup.open({
+                    items: {
+                        src: 'https://dblstatistics.com' + page
+                    },
+                    mainClass: 'mfp-fade',
+                    type: 'iframe'
+                });
+            }
+            div.appendChild(stats);
 
             desc.prepend(div);
         }

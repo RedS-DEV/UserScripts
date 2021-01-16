@@ -22,5 +22,9 @@
     if (page === "/Pages/ToptanciHalIslemleri/HalCikisEkle.aspx") {
         document.getElementById("ContentPlaceHolder1_txtAracPlakaNo").focus();
     }
+
+    if(page === "/Pages/BildirimIslemleri/KunyeKontrol.aspx") {
+        document.getElementById("MainContent_txtAracPlakaNo").focus();
+    }
     
 })();

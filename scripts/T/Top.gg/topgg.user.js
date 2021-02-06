@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Top.gg Tools
-// @namespace    tr.gen.enesgenc.topggtools
+// @namespace    https://enesgenc.gen.tr
 // @version      0.5
 // @description  Tools for Top.gg
 // @author       Enes Genç
